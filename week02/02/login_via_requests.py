@@ -1,4 +1,4 @@
-import requests
+import requests, os
 from fake_useragent import UserAgent
 
 def login(url):
@@ -14,9 +14,9 @@ def login(url):
     s = requests.Session()
 
     body = {
-        'email': 'EMAIL_ADDRESS',
+        'email': os.getenv('EMAIL'),
         'mobile': '+86undefined',
-        'password': 'PASSWORD'
+        'password': os.getenv('PASSWORD')
     }
 
     #登录
